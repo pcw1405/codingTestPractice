@@ -1,18 +1,25 @@
 T=int(input())
 
-for test_case in range(1,T+1):
-    n,m=map(int(),input().split())
-    temp=[list(map(int,input().split())) for i in range(n)]
-    result=[]
- 
-    for i in range(n-m+1):
-        for j in range(n-m+1):
-            fly=0
-            for k in range(i+m):
-                for v in range(j+m):
-                    fly=fly+temp[k,v]
-            result.append(fly)
-    print(max(result))
+for tc in range(1,T+1):
+    n=int(input())
+
+    temp=[1]
+    print(1)
+    for i in range(n):
+        ptemp=temp[:]
+        temp.append(1)
+        for j in range(1,len(temp)):
+            temp[j]=ptemp[j]+ptemp[j-1]
+        for v in temp:
+            print(v,end="")
+        print()
+
+
+
+
+
+
+
 
 
 
