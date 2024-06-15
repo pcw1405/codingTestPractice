@@ -1,7 +1,7 @@
 T=int(input())
 
 for tc in range(1,T+1):
-    n,m=map(int(input().split()))
+    n,m=map(int,input().split())
     temp1=list(map(int,input().split()))
     temp2=list(map(int,input().split()))
 
