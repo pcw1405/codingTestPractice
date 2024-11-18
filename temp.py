@@ -1,44 +1,20 @@
-T=int(input())
+temp=['A+','A0','A-','B+','B0','B-','C+','C0','C-','D0']
 
-for tc in range(1,T+1):
-    h,m,h2,m2=map(int,input().split())
+t=int(input())
 
+for tc in range(1,t+1):
 
-    if(h>=h2):
-        h=h
-    else:
-        h2,h=h,h2
+    n,k=map(int,input().split())
+    count=0
+    score=[]
 
-    total=m+h*60
-    total2=m2+h2*60
+    for i in range(n):
+        a,b,c=map(int,input().split())
+        total=a*0.35+b*0.45+c*0.2
+        score.append(total)
 
-    totaldif=total-total2
-    hourDif=totaldif//60
-    minDif=totaldif%60
-
-    print("#"+str(tc)+"차이는"+str(hourDif)+"시간"+str(minDif)+"분 입니다")
-
-
-
-
+    for j in range(n):
+        if(score[k-1]<score[j]):
+            count=count+1
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print("#"+str(tc),temp[count//(n//10)])
