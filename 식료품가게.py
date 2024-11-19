@@ -6,12 +6,13 @@ for tc in range(1, T + 1):
     price=[]
 
     for i in range(len(temp)):
-        x = int(temp[i]/(0.75))
-        if x in temp and x % 4==0:
-            price.append(temp[i])
+        original_price=temp[i]/0.75
 
-    sorted_price=sorted(set(price))
-    print("#{} {}".format(tc," ".join(map(str,sorted_price))))            
+        if original_price%4 ==0 and original_price in temp:
+            price.append(temp[i])
+            temp[temp.index(original_price)]=-1
+    price.sort()
+    print("#{} {}".format(tc," ".join(map(str,price))))            
         
         
 
